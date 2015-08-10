@@ -7,6 +7,7 @@
 //
 
 #import "SmileAuthenticator.h"
+#import "SmileSettingVC.h"
 
 #define kPasswordLength 4
 #define kTouchIDIcon @"smile_Touch_ID"
@@ -89,7 +90,11 @@ static NSString *kSmileSettingNaviID = @"smileSettingsNavi";
     }
 }
 
--(void)presentAuthViewController{
+-(void)presentAuthViewController {
+    [self presentAuthViewController:nil];
+}
+
+-(void)presentAuthViewController:(void(^)(SmileSettingVC * vc))configureBlock {
     
     if (self.securityType != INPUT_TOUCHID) {
         _isAuthenticated = NO;
@@ -117,6 +122,9 @@ static NSString *kSmileSettingNaviID = @"smileSettingsNavi";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kStoryBoardName bundle: nil];
         
         UINavigationController *naviVC = [storyboard instantiateViewControllerWithIdentifier:kSmileSettingNaviID];
+        
+        if (configureBlock && [naviVC isKindOfClass:[UINavigationController class]])
+            configureBlock((SmileSettingVC *)naviVC.topViewController);
         
         [self.rootVC presentViewController:naviVC animated:isAnimated completion:nil];
     }

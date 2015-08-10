@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/liu044100/SmileTouchID.git", :tag => s.version.to_s}
+  s.source       = { :git => "https://github.com/ducker/SmileTouchID.git", :tag => s.version.to_s}
   s.source_files  = 'SmileAuth/Classes/*'
   s.resource = ['SmileAuth/Assets/*']
   s.public_header_files = 'SmileAuth/Classes/*.h'

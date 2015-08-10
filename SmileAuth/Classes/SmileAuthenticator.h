@@ -71,6 +71,7 @@ typedef NS_ENUM(int, SecurityType) {
 -(void)authenticateWithSuccess:(AuthCompletionBlock) authSuccessBlock andFailure:(AuthErrorBlock) failureBlock;
 
 -(void)presentAuthViewController;
+-(void)presentAuthViewController:(void(^)(SmileSettingVC * vc))configureBlock;
 -(void)authViewControllerDismissed;
 -(void)touchID_OR_PasswordAuthSuccess;
 -(void)touchID_OR_PasswordAuthFail:(NSInteger)failCount;
