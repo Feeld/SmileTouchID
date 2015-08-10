@@ -12,7 +12,7 @@
 
 #define SmileTouchID_DispatchMainThread(block, ...) if(block) dispatch_async(dispatch_get_main_queue(), ^{ block(__VA_ARGS__); })
 
-static CGFloat kLineWidthConst = 12.0;
+static CGFloat kLineWidthConst = 1.0;
 static CGFloat kDotRadiusConst = 5.0;
 static CGFloat kMAX_RadiusConst = 32.0;
 
@@ -54,7 +54,7 @@ static CGFloat kMAX_RadiusConst = 32.0;
 //    CGContextFillRect(UIGraphicsGetCurrentContext(), rect);
     [self.circleColor setStroke];
     
-    CGFloat lineWidth = self.radius/kLineWidthConst;
+    CGFloat lineWidth = kLineWidthConst;
     CGFloat outLineRadius = self.radius - lineWidth;
     
     BOOL isOdd = self.count%2;

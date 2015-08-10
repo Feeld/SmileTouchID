@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 @interface SmileSettingVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+
 @end

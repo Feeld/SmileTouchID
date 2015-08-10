@@ -13,7 +13,6 @@
 @interface SmileSettingVC () <UITextFieldDelegate, SmileContainerLayoutDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet UIButton *touchIDButton;
 @property (weak, nonatomic) IBOutlet SmilePasswordContainerView *passwordView;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
